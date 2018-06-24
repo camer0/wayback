@@ -8,7 +8,8 @@ Based on the code from https://www.reddit.com/r/node/comments/5j3sb7/using_wayba
 
 # Usage
 ```javascript
-let archive = require('waybackarchive')
+let archive = require('waybackarchive');
+let url = "https://www.npmjs.com/package/waybackarchive";
 
 archive(url, {attempts: 5}).then((archived_url) => console.log('Archived at ' + archived_url))
 .catch(err => console.log(err))
@@ -17,3 +18,5 @@ archive(url, {attempts: 5}).then((archived_url) => console.log('Archived at ' + 
 The `attempts` option is optional; it defaults to 10. This module works by requesting the page and then checking every 5 seconds to see if it has been uploaded. 
 
 The attempts # is how many times to check; after this number, it will throw an error. Otherwise, it will return the link to the archived url.
+
+You can only save the same page once every hour or so, so be aware of that when using this module.
