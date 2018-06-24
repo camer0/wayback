@@ -1,0 +1,29 @@
+{
+  "name": "waybackarchive",
+  "version": "1.1.0",
+  "description": "Archives a page to web.archive.org",
+  "main": "wayback.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camer0/wayback.git"
+  },
+  "keywords": [
+    "wayback",
+    "archive",
+    "wayback",
+    "machine"
+  ],
+  "author": "pootusmaximus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/camer0/wayback/issues"
+  },
+  "homepage": "https://github.com/camer0/wayback#readme",
+  "dependencies": {
+    "request": "^2.87.0",
+    "wayback-machine": "^0.2.1"
+  }
+}
