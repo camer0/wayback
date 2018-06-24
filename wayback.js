@@ -3,6 +3,7 @@ var wayback = require('wayback-machine');
 
 module.exports = async function (page, options) {
     let max_attempts = (options && options.attempts) || 10
+    let interval = options.interval || 5000
     return new Promise((resolve, reject) => {
         let prevDate;
         console.log("Saving", page);
@@ -25,7 +26,7 @@ module.exports = async function (page, options) {
                     if (curDate !== prevDate) resolve(closest.url)
                     else checkPage()
                 });
-            }, 5000);
+            }, interval);
         }
     })
 }
