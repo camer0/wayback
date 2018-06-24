@@ -9,6 +9,7 @@ Based on the code from https://www.reddit.com/r/node/comments/5j3sb7/using_wayba
 # Usage
 ```javascript
 let archive = require('waybackarchive')
+
 archive(url, {attempts: 5}).then((archived_url) => console.log('Archived at ' + archived_url))
 .catch(err => console.log(err))
 ```
