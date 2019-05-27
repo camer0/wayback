@@ -7,7 +7,6 @@ module.exports = async function (page, options) {
     let interval = options.interval || 5000
     return new Promise((resolve, reject) => {
         let prevDate;
-        console.log("Saving", page);
         wayback.getClosest(page, function (err, closest) {
             if (err) return console.log(err);
             prevDate = closest.timestamp || "NOTFOUND"
