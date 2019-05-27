@@ -2,13 +2,13 @@ let request = require('request')
 var wayback = require('wayback-machine');
 
 module.exports = async function (page, options) {
+    options = options || {};
     let max_attempts = (options && options.attempts) || 10
     let interval = options.interval || 5000
     return new Promise((resolve, reject) => {
         let prevDate;
-        console.log("Saving", page);
         wayback.getClosest(page, function (err, closest) {
-            if (err) return console.log(err);
+            if (err) return reject(err);
             prevDate = closest.timestamp || "NOTFOUND"
             request("http://web.archive.org/save/" + page, function (err, response, body) {
                 if (err != null) throw err;
